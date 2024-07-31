@@ -54,31 +54,31 @@ module ram_result
    output[RESULT_WIDTH-1:0]  q_a, q_b;
 
    altsyncram altsyncram_component (
-      .address_a (address_a),
-      .address_b (address_b),
-      .clock0 (clock),
-      .data_a (data_a),
-      .data_b (data_b),
-      .wren_a (wren_a),
-      .wren_b (wren_b),
-      .q_a (q_a),
-      .q_b (q_b)
-      ,
-      .aclr0 (),
-      .aclr1 (),
-      .addressstall_a (),
-      .addressstall_b (),
-      .byteena_a (),
-      .byteena_b (),
-      .clock1 (),
-      .clocken0 (),
-      .clocken1 (),
-      .clocken2 (),
-      .clocken3 (),
-      .eccstatus (),
-      .rden_a (),
-      .rden_b ()
-   );
+     		 .address_a (address_a),
+                 .address_b (address_b),
+     		 .clock0 (clock),
+     		 .data_a (data_a),
+     		 .data_b (data_b),
+     		 .wren_a (wren_a),
+     		 .wren_b (wren_b),
+     		 .q_a (q_a),
+     		 .q_b (q_b)
+     		 ,
+     		 .aclr0 (),
+     		 .aclr1 (),
+     		 .addressstall_a (),
+     		 .addressstall_b (),
+     		 .byteena_a (),
+     		 .byteena_b (),
+     		 .clock1 (),
+     		 .clocken0 (),
+     		 .clocken1 (),
+     		 .clocken2 (),
+     		 .clocken3 (),
+     		 .eccstatus (),
+      		 .rden_a (),
+     		 .rden_b ()
+  	   );
    defparam
       altsyncram_component.address_reg_b = "CLOCK0",
       altsyncram_component.clock_enable_input_a = "BYPASS",
