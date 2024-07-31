@@ -10,7 +10,7 @@ where:
 - A: 128x128 matrix of 8-bit unsigned integers
 - B: 128x1 column vector of 8-bit unsigned integers
 - C: 128x1 column vector of 16-bit unsigned integers
-    Y: 128x1 column vector of 24-bit unsigned integers
+- Y: 128x1 column vector of 24-bit unsigned integers
 
 The project addresses the challenge of performing this computation efficiently in hardware, leveraging the FPGA's parallel processing capabilities and specialized hardware resources.
 
@@ -66,13 +66,13 @@ The design is targeted for a 50 MHz clock constraint. Significant effort was put
 
 **ROM Initialization:** The input matrices A, B, and C are initialized using .mif (Memory Initialization File) format.       
 
-**Load Matrix Data:** Load the input matrices (A, B, and C) into the corresponding .mif files.              
+**Load Matrix Data:** Loaded the input matrices (A, B, and C) into the corresponding .mif files.              
 
-**Synthesize and Implement:** Use Intel Quartus Prime to synthesize and implement the design for your Cyclone V FPGA board. 
+**Synthesize and Implement:** Used Intel Quartus Prime to synthesize and implement the design for your Cyclone V FPGA board. 
 
-**Program the FPGA:** Load the generated bitstream to the Cyclone V FPGA Board.               
+**Program the FPGA:** Loaded the generated bitstream to the Cyclone V FPGA Board.               
 
-**Observe Results:** The seven-segment displays will show either the calculated matrix sum or the number of clock cycles taken, depending on the state of switch SW[0].
+**Observe Results:** The seven-segment displays will show either the calculated matrix sum or the number of clock cycles taken, depending on the state of switch SW[1].
 
 ## Acknowledgments
 
