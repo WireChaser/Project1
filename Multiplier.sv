@@ -35,32 +35,32 @@
 `timescale 1 ps / 1 ps
 
 module Multiplier 
-	#(parameter WIDTH_DATA = 8,
-					WIDTH_RESULT = 24)
-	(dataa,
-	datab,
-	result);
+   #(parameter WIDTH_DATA = 8,
+	       WIDTH_RESULT = 24)
+   (dataa,
+   datab,
+   result);
 
-	input	[WIDTH_DATA-1:0]  dataa;
-	input	[WIDTH_DATA-1:0]  datab;
-	output [WIDTH_RESULT-1:0] result;
+   input  [WIDTH_DATA-1:0]  dataa;
+   input  [WIDTH_DATA-1:0]  datab;
+   output [WIDTH_RESULT-1:0] result;
 
-	lpm_mult	lpm_mult_component (
-				.dataa (dataa),
-				.datab (datab),
-				.result (result),
-				.aclr (1'b0),
-				.clken (1'b1),
-				.clock (1'b0),
-				.sclr(1'b0),
-				.sum());
-	defparam
-		lpm_mult_component.lpm_hint = "MAXIMIZE_SPEED=5",
-		lpm_mult_component.lpm_representation = "UNSIGNED",
-		lpm_mult_component.lpm_type = "LPM_MULT",
-		lpm_mult_component.lpm_widtha = WIDTH_DATA,
-		lpm_mult_component.lpm_widthb = WIDTH_DATA, 
-		lpm_mult_component.lpm_widthp = WIDTH_RESULT; 
+   lpm_mult lpm_mult_component 
+      (.dataa (dataa),
+      .datab (datab),
+      .result (result),
+      .aclr (1'b0),
+      .clken (1'b1),
+      .clock (1'b0),
+      .sclr(1'b0),
+      .sum());
+   defparam
+      lpm_mult_component.lpm_hint = "MAXIMIZE_SPEED=5",
+      lpm_mult_component.lpm_representation = "UNSIGNED",
+      lpm_mult_component.lpm_type = "LPM_MULT",
+      lpm_mult_component.lpm_widtha = WIDTH_DATA,
+      lpm_mult_component.lpm_widthb = WIDTH_DATA, 
+      lpm_mult_component.lpm_widthp = WIDTH_RESULT; 
 
 endmodule
 
