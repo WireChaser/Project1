@@ -71,4 +71,4 @@ module Matrices
     .q_a(romC_addrA_value),            // Output data from ROM C (port A)
     .q_b(romC_addrB_value));           // Output data from ROM C (port B)
 
-endmodule
+endmodule : Matrices
