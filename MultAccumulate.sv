@@ -100,6 +100,6 @@ module MultAccumulate
 
   assign finalResultA = (enable_sum_q2) ? (accumResultA1 + accumResultA2 + romC_dataA_reg) : 'z; 
   assign finalResultB = (enable_sum_q2) ? (accumResultB1 + accumResultB2 + romC_dataB_reg) : 'z;      
-endmodule
+endmodule : MultAccumulate
 
 
