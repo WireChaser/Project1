@@ -49,5 +49,5 @@ module ResultMatrix
 
   /*** Matrix Sum provides the final accumulated sumwhen the 'end_operation' signal is asserted ***/
   assign matrixSum = (end_operation) ? accumulator : 'z;
-endmodule
+endmodule : ResultMatrix
 
