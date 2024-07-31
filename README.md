@@ -60,7 +60,7 @@ The design is targeted for a 50 MHz clock constraint. Significant effort was put
 - Wallace Tree Multiplier: Initial attempts to use a Wallace tree multiplier were unsuccessful due to the long critical path. Switching to the lpm_mult IP core significantly reduced this path and improved overall timing. 
 - Controller Signal Delays: Delayed load signals to the ROMs caused the same address values to be multiplied twice. Adding pipeline registers to synchronize the control signals resolved this issue.
 - IO Pin Limitations: Early implementations exceeded the FPGA's 224 available IO output pads due to the large number of instantiated ROM blocks in the Matrices module. Limiting the number of ROM blocks to 9 resolved this issue.
-- Accumulator Bottleneck: The original design used a single accumulator for all multiplication results, which became a timing bottleneck. By introducing additional accumulators to handle the addition of two results at a time instead of four, the FMAX was improved to 93 MHz.
+- Accumulator Bottleneck: The original design used two accumulators for all multiplication results, which became a timing bottleneck. By introducing two additional accumulators to handle the addition of two results at a time instead of four, the FMAX was improved to 93 MHz.
 
 ## Design Testing
 
