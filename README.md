@@ -68,7 +68,7 @@ The design is targeted for a 50 MHz clock constraint. Significant effort was put
 
 Each module in the design (Controller, Matrices, MultAccumulate, and ResultMatrix) was individually tested to verify their functionality. However, these tests were not comprehensive and are not included in this repository. A more thorough testbench is currently under development to comprehensively test the entire MatrixMultiplier module.
 
-## Implementation Details
+## Implementation Details and Results
 
 **ROM Initialization:** The input matrices A, B, and C are initialized using .mif (Memory Initialization File) format.               
 **Load Matrix Data:** Loaded the input matrices (A, B, and C) into the corresponding .mif files.                          
@@ -76,7 +76,7 @@ Each module in the design (Controller, Matrices, MultAccumulate, and ResultMatri
 **Program the FPGA:** Loaded the generated bitstream to the Cyclone V FPGA Board.                       
 **Observe Results:** The seven-segment displays will show either the calculated matrix sum or the number of clock cycles taken, depending on the state of switch SW[1].
 
-## Results: Matrix Multiplication on Cyclone V FPGA Board
+**Results: Matrix Multiplication on Cyclone V FPGA Board**                
 The matrix multiplication operation was successfully implemented on the Cyclone V FPGA board using the input files matA.mif, matB.mif, and matC.mif. The resulting hexadecimal matrix sum was displayed as 206d3d, and the total number of clock cycles required for the operation was 0008bf (hexadecimal).
 
 ## Future Work and Improvements
