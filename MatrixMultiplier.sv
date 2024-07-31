@@ -111,4 +111,4 @@ module MatrixMultiplier
 		.addrB_value(ReadResultB),
 		.matrixSum(ResultMatrixSum));
 		
-endmodule 
+endmodule : MatrixMultiplier
