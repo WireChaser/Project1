@@ -87,7 +87,7 @@ module romA
       altsyncram_component.clock_enable_output_a = "BYPASS",
       altsyncram_component.clock_enable_output_b = "BYPASS",
       altsyncram_component.indata_reg_b = "CLOCK0",
-      altsyncram_component.init_file = "matA_2.mif",					
+      altsyncram_component.init_file = "matA.mif",					
       altsyncram_component.intended_device_family = "Cyclone V",
       altsyncram_component.lpm_type = "altsyncram",
       altsyncram_component.numwords_a = 2**ADDR_WIDTH,
