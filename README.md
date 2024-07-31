@@ -29,9 +29,9 @@ The project addresses the challenge of performing this computation efficiently i
 
 **Matrices**
 
-&#45; ROM Interfaces: Instantiates multiple ROM modules to store the input matrices A, B, and C.
-&#45; Parallel Data Access: Provides parallel access to the data elements of the input matrices, utilizing dual-port ROMs.
-&#45; Pipelined Outputs: Registers the ROM output data to improve timing performance.
+&#45; ROM Interfaces: Instantiates multiple ROM modules to store the input matrices A, B, and C.              
+&#45; Parallel Data Access: Provides parallel access to the data elements of the input matrices, utilizing     dual-port ROMs.
+&#45; Pipelined Outputs: Registers the ROM output data to improve timing performance.          
 
 **MultAccumulate (MAC)**
 
