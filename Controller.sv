@@ -1,7 +1,7 @@
 `timescale 1ps / 1ps
 
 module Controller 
-	#(parameter ADDR_WIDTH = 7)
+    #(parameter ADDR_WIDTH = 7)
 	(
 	input logic clock, reset, end_operation,    // Clock, reset, and signal indicating end of matrix operation
 	output logic sum, clear, mult, write,       // Control signals for MAC unit and RAM
