@@ -77,7 +77,7 @@ Each module in the design (Controller, Matrices, MultAccumulate, and ResultMatri
 **Observe Results:** The seven-segment displays will show either the calculated matrix sum or the number of clock cycles taken, depending on the state of switch SW[1].
 
 **Results: Matrix Multiplication on Cyclone V FPGA Board**                
-The matrix multiplication operation was successfully implemented on the Cyclone V FPGA board using the input files matA.mif, matB.mif, and matC.mif. The resulting hexadecimal matrix sum was displayed as 206d3d, and the total number of clock cycles required for the operation was 0008bf (hexadecimal).
+The matrix multiplication operation was successfully implemented on the Cyclone V FPGA board using the input files matA.mif, matB.mif, and matC.mif. The resulting hexadecimal matrix sum was displayed as 206d3d, and the total number of clock cycles required for the operation was 0008bf (hexadecimal), which corresponds to 2239 clock cycles in decimal representation.
 
 ## Future Work and Improvements
 
