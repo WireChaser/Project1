@@ -62,16 +62,23 @@ The design is targeted for a 50 MHz clock constraint. Significant effort was put
 - IO Pin Limitations: Early implementations exceeded the FPGA's 224 available IO output pads due to the large number of instantiated ROM blocks in the Matrices module. Limiting the number of ROM blocks to 8 resolved this issue.
 - Accumulator Bottleneck: The original design used a single accumulator for all multiplication results, which became a timing bottleneck. By introducing additional accumulators to handle the addition of two results at a time instead of four, the FMAX was improved to 93 MHz.
 
+## Design Testing
+
+Each module in the design (Controller, Matrices, MultAccumulate, and ResultMatrix) was individually tested to verify their functionality. However, these tests were not comprehensive and are not included in this repository. A more thorough testbench is currently under development to comprehensively test the entire MatrixMultiplier module.
+
+## Future Work and Improvements
+
+**Increased Parallelism:** Explore increasing the number of ROM blocks and parallel multipliers in the Matrices and MultAccumulate modules to further accelerate computation.    
+**Systolic Array Implementation:** Investigate implementing a systolic array architecture for the MAC unit, potentially leading to significant improvements in throughput and efficiency.                          
+**Alternative Algorithms:** Experiment with alternative matrix multiplication algorithms (e.g., Strassen's algorithm) to potentially reduce the number of operations required.  
+**Improved Error Handling:** Add robust error detection and handling mechanisms to ensure the reliability of the design.
+
 ## Implementation Details
 
-**ROM Initialization:** The input matrices A, B, and C are initialized using .mif (Memory Initialization File) format.       
-
-**Load Matrix Data:** Loaded the input matrices (A, B, and C) into the corresponding .mif files.              
-
-**Synthesize and Implement:** Used Intel Quartus Prime to synthesize and implement the design for your Cyclone V FPGA board. 
-
-**Program the FPGA:** Loaded the generated bitstream to the Cyclone V FPGA Board.               
-
+**ROM Initialization:** The input matrices A, B, and C are initialized using .mif (Memory Initialization File) format.               
+**Load Matrix Data:** Loaded the input matrices (A, B, and C) into the corresponding .mif files.                          
+**Synthesize and Implement:** Used Intel Quartus Prime to synthesize and implement the design for your Cyclone V FPGA board.             
+**Program the FPGA:** Loaded the generated bitstream to the Cyclone V FPGA Board.                       
 **Observe Results:** The seven-segment displays will show either the calculated matrix sum or the number of clock cycles taken, depending on the state of switch SW[1].
 
 ## Acknowledgments
