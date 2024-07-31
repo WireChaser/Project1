@@ -1,7 +1,7 @@
-# Hardware Accelerated Matrix Multiplier
+# Matrix Multiplier
 ## Project Overview
 
-This project implements a high-performance matrix multiplier designed for FPGAs. The goal is to efficiently compute the result of the following matrix equation:
+This project implements a matrix multiplier designed for the Cyclone V FPGA board. The goal is to efficiently compute the result of the following matrix equation:
 
 Y (24-bit) = A (8-bit) * B (8-bit) + C (16-bit)
 
@@ -30,7 +30,7 @@ The project addresses the challenge of performing this computation efficiently i
 **Matrices**
 
 &#45; ROM Interfaces: Instantiates multiple ROM modules to store the input matrices A, B, and C.              
-&#45; Parallel Data Access: Provides parallel access to the data elements of the input matrices, utilizing     dual-port ROMs.
+&#45; Parallel Data Access: Provides parallel access to the data elements of the input matrices, utilizing     dual-port ROMs.                      
 &#45; Pipelined Outputs: Registers the ROM output data to improve timing performance.          
 
 **MultAccumulate (MAC)**
