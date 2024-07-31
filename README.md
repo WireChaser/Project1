@@ -53,7 +53,7 @@ The project addresses the challenge of performing this computation efficiently i
 &#45; Control and Display: Uses switches to control the reset signal and select between displaying the result or cycle count on the seven-segment displays.            
 &#45; Seven-Segment Decoder: Instantiates SevenSegmentDecoder modules to convert numerical values into the appropriate patterns for the displays.        
 
-**Timing Constraints and Optimization**
+## Timing Constraints and Optimization
 
 The design is targeted for a 50 MHz clock constraint. Significant effort was put into meeting this constraint while maintaining high throughput.  Some of the key challenges and solutions included:
 
