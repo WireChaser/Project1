@@ -3,7 +3,6 @@ module SevenSegmentDecoder (
     output logic [6:0] segment_out       // 7-segment outputs (a, b, c, d, e, f, g)
 );
 
-  // Segment Mapping (Active-High)
   always_comb begin
     case (hex_input)
       4'h0: segment_out = ~7'b011_1111;  // 0
