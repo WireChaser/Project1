@@ -1,6 +1,6 @@
 `timescale 1ps / 1ps
 
-module Controller 
+module Controller  
     #(parameter ADDR_WIDTH = 7)
 	(
 	input logic clock, reset, end_operation,    // Clock, reset, and signal indicating end of matrix operation
