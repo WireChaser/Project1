@@ -46,14 +46,14 @@ module Multiplier
    output [WIDTH_RESULT-1:0] result;
 
    lpm_mult lpm_mult_component 
-      (.dataa (dataa),
-      .datab (datab),
-      .result (result),
-      .aclr (1'b0),
-      .clken (1'b1),
-      .clock (1'b0),
-      .sclr(1'b0),
-      .sum());
+               (.dataa (dataa),
+               .datab (datab),
+               .result (result),
+               .aclr (1'b0),
+               .clken (1'b1),
+               .clock (1'b0),
+               .sclr(1'b0),
+               .sum());
    defparam
       lpm_mult_component.lpm_hint = "MAXIMIZE_SPEED=5",
       lpm_mult_component.lpm_representation = "UNSIGNED",
