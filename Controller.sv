@@ -32,8 +32,7 @@ module Controller
 	always_ff @(posedge clock) begin
 		if (reset) begin
 			current_state <= READ;
-		end 
-		else begin
+		end else begin
 			case (current_state)
 				READ:   current_state <= (last_addressB) ? LOAD : READ;   // Read data from ROM A and ROM B for multiplication
 				LOAD:   current_state <= WRITE;                           // Load data from ROM C for final addition
@@ -75,22 +74,19 @@ module Controller
 			romB_addrB   <= ROM_B_START_ADDR;   
 			romC_addrB   <= ROM_C_START_ADDR;  
 			result_addrB <= RAM_START_ADDR;   
-		end 
-		else if (current_state == READ) begin 
+		end else if (current_state == READ) begin 
 			// Increment addresses for ROM A and B in the READ state
 			romA_addrA <= romA_addrA + 14'd4;    
 			romB_addrA <= romB_addrA + 7'd4;
 			romA_addrB <= romA_addrB + 14'd4;    
 			romB_addrB <= romB_addrB + 7'd4;     
-		end 
-		else if (current_state == LOAD) begin
+		end else if (current_state == LOAD) begin
 			// Increment addresses for ROM C in the LOAD state and resets ROM B to avoid overflow
 			romB_addrA <= '0;
 			romB_addrB <= '0;
 			romC_addrA <= romC_addrA + 7'd1;   
 			romC_addrB <= romC_addrB + 7'd1;   
-		end 
-		else if (current_state == CLEAR) begin 
+		end else if (current_state == CLEAR) begin 
 			// Increment addresses for result RAM in the CLEAR state
 			result_addrA <= result_addrA + 7'd1; 
 			result_addrB <= result_addrB + 7'd1;
