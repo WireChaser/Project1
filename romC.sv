@@ -55,31 +55,31 @@ module romC
    wire  wren_off = '0;
 
    altsyncram altsyncram_component (
-      .address_a (address_a),
-      .address_b (address_b),
-      .clock0 (clock),
-      .data_a (data_in_off),
-      .data_b (data_in_off),
-      .wren_a (wren_off),
-      .wren_b (wren_off),
-      .q_a (q_a),
-      .q_b (q_b),
+     		 .address_a (address_a),
+     		 .address_b (address_b),
+     		 .clock0 (clock),
+     		 .data_a (data_in_off),
+     		 .data_b (data_in_off),
+     		 .wren_a (wren_off),
+     		 .wren_b (wren_off),
+     		 .q_a (q_a),
+     		 .q_b (q_b),
 				
-      /*** Unused Signals ***/
-      .aclr0 (),
-      .aclr1 (),
-      .addressstall_a (),
-      .addressstall_b (),
-      .byteena_a (),
-      .byteena_b (),
-      .clock1 (),
-      .clocken0 (),
-      .clocken1 (),
-      .clocken2 (),
-      .clocken3 (),
-      .eccstatus (),
-      .rden_a (),
-      .rden_b ());
+     		 /*** Unused Signals ***/
+     		 .aclr0 (),
+     		 .aclr1 (),
+     		 .addressstall_a (),
+     		 .addressstall_b (),
+     		 .byteena_a (),
+     		 .byteena_b (),
+     		 .clock1 (),
+     		 .clocken0 (),
+     		 .clocken1 (),
+     		 .clocken2 (),
+     		 .clocken3 (),
+     		 .eccstatus (),
+      		 .rden_a (),
+     		 .rden_b ());
 				
    defparam
       altsyncram_component.address_reg_b = "CLOCK0",
