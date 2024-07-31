@@ -106,4 +106,4 @@ module ram_result
 		altsyncram_component.wrcontrol_wraddress_reg_b = "CLOCK0";
 
 
-endmodule : ram_result
+endmodule 
