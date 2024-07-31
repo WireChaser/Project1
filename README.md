@@ -17,42 +17,42 @@ The project addresses the challenge of performing this computation efficiently i
 ## Module Summaries
 **MatrixMultiplier**
 
-&#45; Top-Level Module: Integrates and connects all other modules to form the complete matrix multiplier system.
+Top-Level Module: Integrates and connects all other modules to form the complete matrix multiplier system.
 
 **Controller**
 
-&#45; Finite State Machine (FSM): Controls the sequence of operations (reading input data, performing MAC operations, storing results) through different states (READ, LOAD, WRITE, CLEAR, END).                   
-&#45; Address Generation: Generates addresses for the ROMs (romA, romB, romC) and the result RAM based on the current state.                              
-&#45; For efficient matrix multiplication, the address generator for ROMs A and B is incremented by 4 in each cycle, allowing the simultaneous reading and multiplication of four data elements. When the address for ROM B reaches 124, indicating the completion of a row in matrix B, a state transition is triggered to proceed to the next stage of the computation.                      
-&#45; Control Signal Generation: Produces control signals (sum, clear, mult, write) to activate specific operations in the MAC unit and result RAM.            
-&#45; Clock Cycle Counter: Keeps track of the total clock cycles used for the matrix multiplication.            
-&#45; End-of-Operation Signal: Generates the end_operation signal when the computation is finished.            
+Finite State Machine (FSM): Controls the sequence of operations (reading input data, performing MAC operations, storing results) through different states (READ, LOAD, WRITE, CLEAR, END).                   
+Address Generation: Generates addresses for the ROMs (romA, romB, romC) and the result RAM based on the current state.                              
+For efficient matrix multiplication, the address generator for ROMs A and B is incremented by 4 in each cycle, allowing the simultaneous reading and multiplication of four data elements. When the address for ROM B reaches 124, indicating the completion of a row in matrix B, a state transition is triggered to proceed to the next stage of the computation.                      
+Control Signal Generation: Produces control signals (sum, clear, mult, write) to activate specific operations in the MAC unit and result RAM.            
+Clock Cycle Counter: Keeps track of the total clock cycles used for the matrix multiplication.            
+End-of-Operation Signal: Generates the end_operation signal when the computation is finished.            
 
 **Matrices**
 
-&#45; ROM Interfaces: Instantiates multiple ROM modules to store the input matrices A, B, and C.              
-&#45; Parallel Data Access: Provides parallel access to the data elements of the input matrices, utilizing     dual-port ROMs.                      
-&#45; Pipelined Outputs: Registers the ROM output data to improve timing performance.          
+ROM Interfaces: Instantiates multiple ROM modules to store the input matrices A, B, and C.              
+Parallel Data Access: Provides parallel access to the data elements of the input matrices, utilizing     dual-port ROMs.                      
+Pipelined Outputs: Registers the ROM output data to improve timing performance.          
 
 **MultAccumulate (MAC)**
 
-&#45; Parallel Multipliers: Instantiates multiple Multiplier modules to perform parallel multiplication of data elements from ROM A and ROM B.        
-&#45; Accumulation: Accumulates the results of the multiplications, along with the corresponding values from ROM C.                
-&#45; Pipelining: Uses pipeline registers to synchronize control signals and data flow, to meet timing requirements.                
-&#45; Output: Provides the final accumulated results (finalResultA, finalResultB) for each computation cycle.
+Parallel Multipliers: Instantiates multiple Multiplier modules to perform parallel multiplication of data elements from ROM A and ROM B.        
+Accumulation: Accumulates the results of the multiplications, along with the corresponding values from ROM C.                
+Pipelining: Uses pipeline registers to synchronize control signals and data flow, to meet timing requirements.                
+Output: Provides the final accumulated results (finalResultA, finalResultB) for each computation cycle.
 
 **ResultMatrix**
 
-&#45; Result Storage: Stores the final results from the MAC unit in a dual-port RAM.                        
-&#45; Result Accumulator: Accumulates the sum of all the results stored in the RAM.                                    
-&#45; Read/Write Interface: Provides ports for reading individual results and the final accumulated sum.                        
-&#45; End-of-Operation Signal: Generates the end_operation signal when all results have been written to RAM and accumulated.
+Result Storage: Stores the final results from the MAC unit in a dual-port RAM.                        
+Result Accumulator: Accumulates the sum of all the results stored in the RAM.                                    
+Read/Write Interface: Provides ports for reading individual results and the final accumulated sum.                        
+End-of-Operation Signal: Generates the end_operation signal when all results have been written to RAM and accumulated.
 
 **ChipInterface**
 
-&#45; I/O Interface: Connects the matrix multiplier design to the FPGA board's switches and seven-segment displays.                        
-&#45; Control and Display: Uses switches to control the reset signal and select between displaying the result or cycle count on the seven-segment displays.            
-&#45; Seven-Segment Decoder: Instantiates SevenSegmentDecoder modules to convert numerical values into the appropriate patterns for the displays.        
+I/O Interface: Connects the matrix multiplier design to the FPGA board's switches and seven-segment displays.                        
+Control and Display: Uses switches to control the reset signal and select between displaying the result or cycle count on the seven-segment displays.            
+Seven-Segment Decoder: Instantiates SevenSegmentDecoder modules to convert numerical values into the appropriate patterns for the displays.        
 
 ## Timing Constraints and Optimization
 
