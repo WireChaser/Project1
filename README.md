@@ -23,7 +23,8 @@ The project addresses the challenge of performing this computation efficiently i
 
 1. Finite State Machine (FSM): Controls the sequence of operations (reading input data, performing MAC operations, storing results) through different states (READ, LOAD, WRITE, CLEAR, END).                   
 2. Address Generation: Generates addresses for the ROMs (romA, romB, romC) and the result RAM based on the current state.                              
-   - For efficient matrix multiplication, the address generator for ROMs A and B is incremented by 4 in each cycle, allowing the simultaneous reading and multiplication of four data elements. When the address for ROM B reaches 124, indicating the completion of a row in matrix B, a state transition is triggered to proceed to the next stage of the computation.                      
+   - For efficient matrix multiplication, the address generator for ROMs A and B is incremented by 4 in each cycle, allowing the simultaneous reading and multiplication of four data elements.
+   - When the address for ROM B reaches 124, indicating the completion of a row in matrix B, a state transition is triggered to proceed to the next stage of the computation.                      
 3. Control Signal Generation: Produces control signals (sum, clear, mult, write) to activate specific operations in the MAC unit and result RAM.            
 4. Clock Cycle Counter: Keeps track of the total clock cycles used for the matrix multiplication.            
 5. End-of-Operation Signal: Generates the end_operation signal when the computation is finished.            
