@@ -2,7 +2,8 @@
 
 module ChipInterface
   (input  logic       CLOCK_50,
-   input  logic [1:0] SW,
+   input  logic [0:0] KEY,
+   input  logic [1:1] SW,
    output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	
    logic [23:0] sum, cycles;
@@ -16,7 +17,7 @@ module ChipInterface
    MatrixMultiplier MatrixMultiplier
       	(
 	 .CLOCK_50(CLOCK_50), 
-	 .reset(SW[0]),            
+	 .reset(~KEY[0]),            
 	 .cycle_count(cycles),        			
 	 .ReadResultA(),    
 	 .ReadResultB(), 
