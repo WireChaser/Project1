@@ -45,14 +45,12 @@ module Controller
      end
 	
    /*** Combinational Logic to Generate Control Signals Based on Current State ***/
-   always_comb begin 
-      sum     = (current_state == LOAD);    // Enable final addition in MAC unit
-      write   = (current_state == WRITE);   // Enable write to result RAM
-      clear   = (current_state == CLEAR);   // Clear MAC unit accumulators
-      mult    = (current_state == READ);    // Enable multiplication in MAC unit
-      cycle_stop = (current_state == END); // Stop the cycle counter when in END state
-   end
-	
+   assign sum     = (current_state == LOAD);    // Enable final addition in MAC unit
+   assign write   = (current_state == WRITE);   // Enable write to result RAM
+   assign clear   = (current_state == CLEAR);   // Clear MAC unit accumulators
+   assign mult    = (current_state == READ);    // Enable multiplication in MAC unit
+   assign cycle_stop = (current_state == END); // Stop the cycle counter when in END state
+   
    /*** Clock Cycle Counter: Tracks the Total Cycles for the Matrix Operation ***/
    always_ff @(posedge clock) begin
       if (reset) begin
